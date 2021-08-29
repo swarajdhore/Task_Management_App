@@ -1,6 +1,8 @@
+let globalTaskData = [];
+
 const taskContainer = document.querySelector(".task__container");
 const taskModal = document.querySelector(".task__modal__body");
-let globalTaskData = [];
+
 
 const generateHTML = (taskData) => {
   return ` <div id=${taskData.id} class="col-md-6 col-lg-4 my-4">
