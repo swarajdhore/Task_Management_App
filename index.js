@@ -136,7 +136,7 @@ const editCard = (event) => {
 const openTask = (e) => {
   if (!e) e = window.event;
 
-  const getTask = state.taskList.filter(({ id }) => id === e.target.id);
+  const getTask = globalTaskData.filter(({ id }) => id === e.target.id);
   taskModal.innerHTML = htmlModalContent(getTask[0]);
 };
 
