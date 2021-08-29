@@ -25,7 +25,9 @@ const generateHTML = (taskData) => {
     <span class="badge bg-primary">${taskData.type}</span>
   </div>
   <div class="card-footer">
-    <button class="btn btn-outline-primary" name=${taskData.id}>Open Task</button>
+    <button class="btn btn-outline-primary" name=${taskData.id} data-bs-toggle="modal"
+    data-bs-target="#showTask"
+    onclick="openTask.apply(this, arguments)">Open Task</button>
   </div>
 </div>
 </div>`;
@@ -179,6 +181,9 @@ const saveEdit = (event) => {
   taskTitle.setAttribute("contenteditable", "false");
   taskDescription.setAttribute("contenteditable", "false");
   taskType.setAttribute("contenteditable", "false");
+  submitButton.setAttribute("onclick", "openTask.apply(this, arguments)");
+  submitButton.setAttribute("data-bs-toggle", "modal");
+  submitButton.setAttribute("data-bs-target", "#showTask");
   submitButton.innerHTML = "Open Task";
 };
 
