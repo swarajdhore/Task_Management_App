@@ -132,6 +132,13 @@ const editCard = (event) => {
   submitButton.innerHTML = "Save Changes";
 };
 
+const openTask = (e) => {
+  if (!e) e = window.event;
+
+  const getTask = state.taskList.filter(({ id }) => id === e.target.id);
+  taskModal.innerHTML = htmlModalContent(getTask[0]);
+};
+
 const saveEdit = (event) => {
   const targetID = event.target.getAttribute("name");
   const elementType = event.target.tagName;
