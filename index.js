@@ -1,4 +1,5 @@
 const taskContainer = document.querySelector(".task__container");
+const taskModal = document.querySelector(".task__modal__body");
 let globalTaskData = [];
 
 const generateHTML = (taskData) => {
