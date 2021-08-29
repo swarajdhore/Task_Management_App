@@ -34,6 +34,25 @@ const generateHTML = (taskData) => {
 </div>`;
 };
 
+const htmlModalContent = ({ id, title, description, url }) => {
+  const date = new Date(parseInt(id));
+  return ` <div id=${id}>
+  <img
+  src=${
+    url ||
+    `https://images.unsplash.com/photo-1572214350916-571eac7bfced?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80`
+  }
+  alt="bg image"
+  class="img-fluid place__holder__image mb-3"
+  />
+  <strong class="text-sm text-muted">Created on ${date.toDateString()}</strong>
+  <h2 class="my-3">${title}</h2>
+  <p class="lead">
+  ${description}
+  </p></div>`;
+};
+
+
 const saveToLocalStorage = () =>
   localStorage.setItem("taskyCA", JSON.stringify({ card: globalTaskData }));
 
